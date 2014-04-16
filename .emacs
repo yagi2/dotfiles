@@ -1,6 +1,6 @@
 ;; UserSettings
 (setq user-full-name "Yagi2")
-(setq user-mail-address "magical.reisen@gmail.com")
+(setq user-mail-address "mail@yagi2.com")
 
 ;;; common mode
 ;; tabではなくspaceを使う
