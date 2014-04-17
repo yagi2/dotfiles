@@ -179,19 +179,19 @@
       (listsubdir "c:/emacs/font/intlfonts-1.2.1"))
 
 ;; テンプレートを挿入
-;;(require 'autoinsert)
+(require 'autoinsert)
 
 ; テンプレートのディレクトリ
-;;(setq auto-insert-directory "D:/Dropbox/Prog/Template/")
+(setq auto-insert-directory "D:/Dropbox/Prog/Template/")
 
 ; 各ファイルによってテンプレートの切り替え
-;;(add-hook 'find-file-hooks 'auto-insert)
-;;(setq auto-insert-alist
-;;      (append '(
-;;		(c++-mode . "template.cpp")
-;;		(c-mode . "template.c")
-;;		(html-mode . "template.html")
-;;		) auto-insert-alist))
+(add-hook 'find-file-hooks 'auto-insert)
+(setq auto-insert-alist
+      (append '(
+		(c++-mode . "template.cpp")
+		(c-mode . "template.c")
+		(html-mode . "template.html")
+		) auto-insert-alist))
 
 ;つぶやきもーど  //APIの仕様変更でつぶやけなくなったので廃止
 ;;(defun tweet(tweet)
