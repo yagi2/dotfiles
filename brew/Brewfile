@@ -1,0 +1,45 @@
+# update Homebrew
+update
+
+# update formula
+upgrade
+
+# Add Repository
+tap phinze/homebrew-cask	# homebrew-cask
+tap sanemat/font			# Ricty
+
+# build or install
+install android-sdk
+install ansible
+install brew-cask
+install emacs --cocoa
+install fish
+install git
+install git-flow
+install mysql
+install nkf
+install node
+install openssl
+install peco
+install pkg-config
+install readline
+install ricty
+install sqlite
+install tig
+install tmux
+install tree
+install wget
+install zsh-completions
+
+# cask install
+cask install alfred
+cask install appcleaner
+cask install boot2docker
+cask install clipmenu
+cask install coteditor
+cask install dropbox
+cask install slack
+cask install sublime-text
+cask install vagrant
+cask install virtualbox
+cask install xtrafinder
