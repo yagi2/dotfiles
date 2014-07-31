@@ -10,6 +10,7 @@ alias mkdir='mkdir -p'
 alias x='exit'
 alias sublime='subl'
 alias sl='ls'
+alias ks='ls'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 eval $(gdircolors ~/dircolors-solarized/dircolors.ansi-universal)
 export EDITOR='subl -w'
@@ -43,4 +44,5 @@ local p2="%1(v|%F{red}%1v%f|)"
 PROMPT=$p1$p2$' \xF0\x9f\x8d\xba \n$ '
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
 source ~/.rvm/scripts/rvm

@@ -119,6 +119,11 @@
 (color-theme-initialize)
 (color-theme-molokai)
 
+;; direx
+(add-to-list 'load-path "~/.emacs.d/site-lisp/direx-el")
+(require 'direx)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
+
 ;; Macのトラックパッドでの快適スクロール
 (defun scroll-down-with-lines ()
   "" (interactive) (scroll-down 3))
