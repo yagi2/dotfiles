@@ -122,7 +122,71 @@
 ;; direx
 (add-to-list 'load-path "~/.emacs.d/site-lisp/direx-el")
 (require 'direx)
-(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+
+;; popwin
+(add-to-list 'load-path "~/.emacs.d/site-lisp/popwin-el")
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+
+;; direxの設定
+(push '(direx:direx-mode :position left :width 25 :dedicated t)
+      popwin:special-display-config)
+(setq direx:leaf-icon "  "
+      direx:open-icon "▾ "
+      direx:closed-icon "▸ ")
+
+;; tabbar
+(add-to-list 'load-path "~/.emacs.d/site-lisp/tabbar-el")
+(require 'cl)
+ (when (require 'tabbar nil t)
+    (setq tabbar-buffer-groups-function
+	    (lambda (b) (list "All Buffers")))
+    (setq tabbar-buffer-list-function
+          (lambda ()
+            (remove-if
+             (lambda(buffer)
+	       (unless (string= (buffer-name buffer) "*shell*")
+		 (find (aref (buffer-name buffer) 0) " *")))
+             (buffer-list))))
+    (tabbar-mode))
+
+;; 左に表示されるボタンを無効化
+(setq tabbar-home-button-enabled "")
+(setq tabbar-scroll-left-button-enabled "")
+(setq tabbar-scroll-right-button-enabled "")
+(setq tabbar-scroll-left-button-disabled "")
+(setq tabbar-scroll-right-button-disabled "")
+
+;; 色設定
+ (set-face-attribute
+   'tabbar-default-face nil
+   :background "gray90") ;バー自体の色
+  (set-face-attribute ;非アクティブなタブ
+   'tabbar-unselected-face nil
+   :background "gray90"
+   :foreground "black"
+   :box nil)
+  (set-face-attribute ;アクティブなタブ
+   'tabbar-selected-face nil
+   :background "black"
+   :foreground "white"
+   :box nil)
+
+;; 幅設定
+  (set-face-attribute
+   'tabbar-separator-face nil
+   :height 0.7)
+
+;; Firefoxライクなキーバインドに
+(global-set-key [(control tab)]       'tabbar-forward)
+(global-set-key [(control shift iso-lefttab)] 'tabbar-backward)
+;; -nw では効かないので別のキーバインドを割り当てる
+(global-set-key (kbd "C-x n") 'tabbar-forward)
+(global-set-key (kbd "C-x p") 'tabbar-backward)
+
+;;F4ボタンで切り替え
+(global-set-key [f4] 'tabbar-mode)
 
 ;; Macのトラックパッドでの快適スクロール
 (defun scroll-down-with-lines ()
@@ -142,3 +206,83 @@
 ;; ウィンドウサイズ
 (setq initial-frame-alist
       '((top . 1) (left . 1) (width . 130) (height . 50)))
+
+;; github
+(defun chomp (str)
+  (replace-regexp-in-string "[\n\r]+$" "" str))
+
+(defun git-project-p ()
+  (string=
+   (chomp
+    (shell-command-to-string "git rev-parse --is-inside-work-tree"))
+   "true"))
+
+(defun open-github-from-current ()
+  (interactive)
+  (cond ((and (git-project-p) (use-region-p))
+         (shell-command
+          (format "open-github-from-file %s %d %d"
+                  (file-name-nondirectory (buffer-file-name))
+                  (line-number-at-pos (region-beginning))
+                  (line-number-at-pos (region-end)))))
+        ((git-project-p)
+         (shell-command
+          (format "open-github-from-file %s %d"
+                  (file-name-nondirectory (buffer-file-name))
+                  (line-number-at-pos))))))
+
+;; 文法チェック
+(require 'flymake)
+
+(defadvice flymake-post-syntax-check (before flymake-force-check-was-interrupted)
+  (setq flymake-check-was-interrupted t))
+(ad-activate 'flymake-post-syntax-check)
+
+(defun flymake-cc-init ()
+  (let* ((temp-file   (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+         (local-file  (file-relative-name
+                       temp-file
+                       (file-name-directory buffer-file-name))))
+    (list "g++" (list "-Wall" "-Wextra" "-fsyntax-only" local-file))))
+
+(push '("\\.cpp&" flymake-cc-init) flymake-allowed-file-name-masks)
+
+(add-hook 'c-mode-hook
+          '(lambda ()
+             (flymake-mode t)))
+
+(defun flymake-cc-init ()
+  (let* ((temp-file   (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+         (local-file  (file-relative-name
+                       temp-file
+                       (file-name-directory buffer-file-name))))
+    (list "gcc" (list "-Wall" local-file))))
+
+(push '("\\.c$" flymake-cc-init) flymake-allowed-file-name-masks)
+
+(add-hook 'c-mode-hook
+          '(lambda ()
+             (flymake-mode t)))
+
+;; auto-complete
+(add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete-1.3.1")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/site-lisp/auto-complete-1.3.1/dict")
+(ac-config-default)
+
+;; git gutter
+(add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-git-gutter")
+(require 'git-gutter)
+(global-git-gutter-mode t)
+
+(custom-set-variables
+ '(git-gutter:window-width 2)
+ '(git-gutter:modified-sign "☁")
+ '(git-gutter:added-sign "☀")
+ '(git-gutter:deleted-sign "☂"))
+
+(set-face-background 'git-gutter:modified "blue") ;; background color
+(set-face-foreground 'git-gutter:added "orange")
+(set-face-foreground 'git-gutter:deleted "white")
