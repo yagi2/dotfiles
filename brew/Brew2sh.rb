@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby
+#!/usr/bin/ruby
 File::open( ARGV[0] ) { |brewfile|
   brewfile.each_line {|line|
     if line[0] == "#"|| line.size == 1 then
