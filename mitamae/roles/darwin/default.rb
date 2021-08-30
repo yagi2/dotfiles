@@ -6,8 +6,30 @@ node.reverse_merge!(
 )
 
 include_cookbook 'dotfile'
-include_cookbook 'brew'
 include_cookbook 'cask'
 
 include_cookbook 'fish-shell'
 include_cookbook 'hyper'
+include_cookbook 'nerd-font'
+# TODO implement with rbenv include_cookbook 'ruby' 
+# TODO implement include_cookbook 'java'
+
+package 'ffmpeg'
+package 'gh'
+package 'ki'
+package 'micro'
+package 'peco'
+package 'source-highlight'
+package 'exa'
+package 'bat'
+
+cask '1password'
+cask 'cmd-eikana'
+cask 'fork'
+cask 'visual-studio-code'
+cask 'alfred'
+cask 'editaro'
+cask 'font-hack-nerd-font'
+cask 'google-japanese-ime'
+cask 'jetbrains-toolbox'
+cask 'spotify'
