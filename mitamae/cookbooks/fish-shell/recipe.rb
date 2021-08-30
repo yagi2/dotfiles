@@ -1,4 +1,4 @@
-brew 'fish'
+package 'fish'
 
 dotfile '.config/fish/config.fish'
 

@@ -10,4 +10,4 @@ include_cookbook 'brew'
 include_cookbook 'cask'
 
 include_cookbook 'fish-shell'
-# include_cookbook 'hyper'
+include_cookbook 'hyper'
