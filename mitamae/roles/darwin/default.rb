@@ -8,6 +8,7 @@ node.reverse_merge!(
 include_cookbook 'dotfile'
 include_cookbook 'cask'
 
+include_cookbook 'git'
 include_cookbook 'fish-shell'
 include_cookbook 'hyper'
 include_cookbook 'nerd-font'
