@@ -11,7 +11,7 @@ include_cookbook 'cask'
 include_cookbook 'fish-shell'
 include_cookbook 'hyper'
 include_cookbook 'nerd-font'
-# TODO implement with rbenv include_cookbook 'ruby' 
+include_cookbook 'ruby' 
 include_cookbook 'java'
 
 package 'ffmpeg'
