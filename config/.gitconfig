@@ -5,3 +5,5 @@
   force-push = push --force-with-lease
 [core]
   excludesfile = ~/.gitignore
+[pull]
+ ff = only
