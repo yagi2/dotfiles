@@ -1,14 +1,14 @@
 set ANDROID_SDK $HOME/Library/Android/sdk
 set ANDROID_HOME $HOME/Library/Android/sdk
 set PATH  $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $PATH
-set JAVA_HOME (/usr/libexec/java_home)
+set JAVA_HOME (/usr/libexec/java_home -v "1.8")
 set EDITOR /usr/local/bin/micro
 set LESSOPEN '| /usr/local/bin/src-hilite-lesspipe.sh %s'
 set LESS '-R'
 set -gx theme_nerd_fonts yes
 
 # for java
-fish_add_path /usr/local/opt/openjdk/bin
+fish_add_path /usr/local/opt/openjdk@8/bin
 
 # for rbenv
 status --is-interactive; and source (rbenv init -|psub)
