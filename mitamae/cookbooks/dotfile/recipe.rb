@@ -1,12 +1,12 @@
 define :dotfile do
-    name = params[:name]
+  name = params[:name]
   
-    src = File.join(node[:dotfiles], name)
-    dst = File.join(node[:home], name)
+  src = File.join(node[:dotfiles], name)
+  dst = File.join(node[:home], name)
 
-    directory File.dirname(dst)
+  directory File.dirname(dst)
   
-    link dst do
-      to src
-    end
+  link dst do
+    to src
   end
+end
