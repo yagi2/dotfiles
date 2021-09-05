@@ -1,6 +1,8 @@
 # dotfiles
 
 ## Usage
+*note*  
+You have to login to AppStore before run this script. (for install apps from AppStore in this script.)  
 ```shell
 $ git clone https://github.com/lime1024/dotfiles.git
 $ dotfiles/setup.sh

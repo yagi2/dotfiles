@@ -9,6 +9,7 @@ include_cookbook 'macos-system'
 
 include_cookbook 'dotfile'
 include_cookbook 'cask'
+include_cookbook 'mas'
 
 include_cookbook 'git'
 include_cookbook 'fish-shell'
@@ -27,6 +28,7 @@ package 'exa'
 package 'bat'
 package 'jq'
 package 'awscli'
+package 'mas'
 
 cask '1password'
 cask '1password-cli'
@@ -43,3 +45,10 @@ cask 'stats'
 cask 'cinch'
 cask 'slack'
 cask 'discord'
+
+mas '485812721' # TweetDeck
+mas '539883307' # LINE
+mas '640199958' # Apple Developer
+mas '497799835' # Xcode
+mas '405399194' # Kindle
+mas '585829637' # Todoist
