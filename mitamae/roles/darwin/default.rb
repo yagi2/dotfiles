@@ -24,6 +24,7 @@ package 'source-highlight'
 package 'exa'
 package 'bat'
 package 'jq'
+package 'awscli'
 
 cask '1password'
 cask 'cmd-eikana'
