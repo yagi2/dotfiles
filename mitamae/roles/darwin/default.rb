@@ -23,6 +23,7 @@ package 'peco'
 package 'source-highlight'
 package 'exa'
 package 'bat'
+package 'jq'
 
 cask '1password'
 cask 'cmd-eikana'
