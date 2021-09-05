@@ -17,10 +17,6 @@ execute 'set sidebar icon size to small' do
     command 'defaults write .GlobalPreferences NSTableViewDefaultSizeMode -int 1'
 end
 
-execute 'set automatically hide the menu bar' do
-    command 'defaults write .GlobalPreferences _HIHideMenuBar -bool true'
-end
-
 execute 'set show scroll bars to always' do
     command 'defaults write .GlobalPreferences AppleShowScrollBars -string "Always"'
 end
