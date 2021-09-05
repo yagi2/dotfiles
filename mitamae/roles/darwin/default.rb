@@ -27,6 +27,7 @@ package 'jq'
 package 'awscli'
 
 cask '1password'
+cask '1password-cli'
 cask 'cmd-eikana'
 cask 'fork'
 cask 'visual-studio-code'
