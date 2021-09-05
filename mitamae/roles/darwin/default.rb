@@ -29,6 +29,7 @@ package 'bat'
 package 'jq'
 package 'awscli'
 package 'mas'
+package 'pidcat'
 
 cask '1password'
 cask '1password-cli'
