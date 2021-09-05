@@ -5,6 +5,8 @@ node.reverse_merge!(
   home: '/Users/yagi2'
 )
 
+include_cookbook 'macos-system'
+
 include_cookbook 'dotfile'
 include_cookbook 'cask'
 
@@ -38,3 +40,4 @@ cask 'google-japanese-ime'
 cask 'jetbrains-toolbox'
 cask 'spotify'
 cask 'stats'
+cask 'cinch'
