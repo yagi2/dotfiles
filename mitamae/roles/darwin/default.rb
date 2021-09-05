@@ -45,6 +45,7 @@ cask 'stats'
 cask 'cinch'
 cask 'slack'
 cask 'discord'
+cask 'inkdrop'
 
 mas '485812721' # TweetDeck
 mas '539883307' # LINE
