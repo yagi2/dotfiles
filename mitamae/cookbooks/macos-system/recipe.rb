@@ -30,7 +30,7 @@ execute 'set close windows when quitting an app to false' do
 end
 
 execute 'set dock size to 10' do
-    command 'defaults write com.apple.dock tilesize -int 10'
+    command 'defaults write com.apple.dock tilesize -int 30'
 end
 
 execute 'set automatically hide the dock' do
