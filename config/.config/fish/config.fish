@@ -18,9 +18,10 @@ eval (gh completion -s fish | source)
 
 alias ps='procs'
 alias cat='bat'
-alias ls='exa --icons'
+alias ls='exa -l --icons'
+alias g='git'
 
-function peco_select_history
+function hs
   if test (count $argv) = 0
     set peco_flags --layout=bottom-up
   else
@@ -32,43 +33,6 @@ function peco_select_history
   else
     commandline ''
   end
-end
-bind \cR peco_select_history (commandline -b)
-
-function gs
-  git status
-end
-
-function git-branch
-  git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"
-end
-
-function git-checkout
-  git-branch | xargs git checkout
-end
-
-function git-file-reset
-  git diff --name-only | peco | xargs git checkout
-end
-
-function git-file-select
-  git diff --name-only | peco
-end
-
-function git-delete-branch
-  git branch --merged | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g" | xargs git branch -D
-end
-
-function git-diff
-  git diff --name-only | peco | xargs git diff | less -R
-end
-
-function git-add
-  git diff --name-only | peco | xargs git add
-end
-
-function git-remove-merged-branch
-  git branch --merged | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g" | xargs git branch -D
 end
 
 function select-adb
