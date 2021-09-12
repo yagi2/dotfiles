@@ -32,6 +32,7 @@ package 'mas'
 package 'pidcat'
 package 'go'
 package 'ghq'
+package 'hub'
 
 cask '1password'
 cask '1password-cli'
