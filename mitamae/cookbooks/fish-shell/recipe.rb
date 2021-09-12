@@ -2,16 +2,10 @@ package 'fish'
 
 dotfile '.config/fish/config.fish'
 
-execute "install oh-my-fish" do
-    command <<~SCRIPT
-    curl -L https://get.oh-my.fish > install
-    fish install --path=#{node[:home]}/.local/share/omf --config=#{node[:home]}/.config/omf --noninteractive
-    rm install
-    SCRIPT
-    not_if {File.exists?("#{node[:home]}/.local/share/omf")}
+execute "install fisherman" do
+    command "echo \"curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher\" | fish"
 end
 
 execute "install and apply bobthefish theme" do
-    command "echo \"omf install bobthefish\" | fish"
-    command "echo \"omf theme bobthefish\" | fish"
+    command "echo \"fisher install oh-my-fish/theme-bobthefish\" | fish"
 end
