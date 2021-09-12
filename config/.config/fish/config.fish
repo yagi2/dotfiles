@@ -1,6 +1,7 @@
 set ANDROID_SDK $HOME/Library/Android/sdk
 set ANDROID_HOME $HOME/Library/Android/sdk
-set PATH  $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $PATH
+set GOPATH $HOME
+set PATH $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $GOPATH/bin $PATH
 set JAVA_HOME (/usr/libexec/java_home -v "1.8")
 set EDITOR /usr/local/bin/micro
 set LESSOPEN '| /usr/local/bin/src-hilite-lesspipe.sh %s'
