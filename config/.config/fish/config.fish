@@ -18,7 +18,7 @@ eval (gh completion -s fish | source)
 
 alias ps='procs'
 alias cat='bat'
-alias ls='exa -l --icons'
+alias ls='exa --icons'
 alias g='git'
 
 function hs
