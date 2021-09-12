@@ -34,6 +34,26 @@ function hs
     commandline ''
   end
 end
+bind \cr hs
+
+function gcd
+    ghq list --full-path | peco --prompt "Git Repository>" | read recent
+    if [ $recent ]
+        cd $recent
+    end
+end
+bind \co gcd
+
+function ghq-create
+    cd (ghq create (echo $argv)) | gh repo create (echo $argv) --public -y
+    echo "# "(echo $argv) >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M master
+    git remote add origin git@github.com:yagi2/(echo $argv).git
+    git push -u origin master
+end
 
 function select-adb
   adb devices | sed '1d' | peco | awk '{print $1}'

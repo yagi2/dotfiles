@@ -9,15 +9,16 @@
 [pull]
  ff = only
 [ghq]
-	root = ~/github.com
+	root = ~/repos
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [alias]
     s = "status"
     com = "commit"
     rb = "rebase"
-    co = "!$SHELL -c 'git branch -a | peco --prompt \"GIT BRANCH>\" | head -n 1 | sed -e \"s/^\\*\\s*//g\" | xargs git checkout' __dummy__"
-    fr = "!$SHELL -c 'git diff --name-only | peco | xargs git checkout' __dummy__"
-    db = "!$SHELL -c 'git branch --merged | peco --prompt \"GIT BRANCH>\" | head -n 1 | sed -e \"s/^\\*\\s*//g\" | xargs git branch -D' __dummy__"
-    df = "!$SHELL -c 'git diff --name-only | peco | xargs git diff | less -R' __dummy__" 
-    ad = "!$SHELL -c 'git diff --name-only | peco | xargs git add' __dummy__"
+    co = "!$SHELL -c 'git branch -a | peco --prompt \"Git Branch>\" | head -n 1 | sed -e \"s/^\\*\\s*//g\" | xargs git checkout' __dummy__" # checkout with peco
+    fr = "!$SHELL -c 'git diff --name-only | peco -prompt \"File>\" | xargs git checkout' __dummy__" # file reset
+    db = "!$SHELL -c 'git branch --merged | peco --prompt \"Git Branch>\" | head -n 1 | sed -e \"s/^\\*\\s*//g\" | xargs git branch -D' __dummy__" # delete merged branch
+    df = "!$SHELL -c 'git diff --name-only | peco --prompt \"File>\" | xargs git diff | less -R' __dummy__"  # diff with peco
+    ad = "!$SHELL -c 'git diff --name-only | peco --prompt \"File>\" | xargs git add' __dummy__" # add with peco
+    br = "!$SHELL -c 'ghq list | peco --prompt \"Git Repository>\" | xargs hub browse' __dummy__"
