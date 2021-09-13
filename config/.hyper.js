@@ -4,7 +4,7 @@
 module.exports = {
     config: {
         hyperSana: {
-            opacity: 1,
+            opacity: 0.5,
             overText: true
         },
 
@@ -74,5 +74,6 @@ module.exports = {
         'hyper-alt-click',
         'gitrocket',
         'space-pull',
+        'hyper-opacity',
     ]
 };
