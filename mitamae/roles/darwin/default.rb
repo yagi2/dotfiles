@@ -33,6 +33,7 @@ package 'pidcat'
 package 'go'
 package 'ghq'
 package 'hub'
+package 'tig'
 
 cask '1password'
 cask '1password-cli'
