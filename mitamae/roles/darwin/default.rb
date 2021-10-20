@@ -34,6 +34,7 @@ package 'go'
 package 'ghq'
 package 'hub'
 package 'tig'
+package 'ag'
 
 cask '1password'
 cask '1password-cli'
