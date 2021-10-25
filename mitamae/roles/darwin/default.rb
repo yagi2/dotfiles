@@ -17,6 +17,7 @@ include_cookbook 'hyper'
 include_cookbook 'nerd-font'
 include_cookbook 'ruby' 
 include_cookbook 'java'
+include_cookbook 'xcode'
 
 package 'ffmpeg'
 package 'gh'
@@ -54,10 +55,8 @@ cask 'inkdrop'
 cask 'figma'
 cask 'zoom'
 cask 'tweeten'
-cask 'xcodes'
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
-mas '497799835' # Xcode
 mas '405399194' # Kindle
 mas '585829637' # Todoist
