@@ -53,9 +53,9 @@ cask 'discord'
 cask 'inkdrop'
 cask 'figma'
 cask 'zoom'
+cask 'tweeten'
 cask 'xcodes'
 
-mas '485812721' # TweetDeck
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
 mas '497799835' # Xcode
