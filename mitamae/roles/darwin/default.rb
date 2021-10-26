@@ -21,7 +21,6 @@ include_cookbook 'java'
 include_cookbook 'xcode'
 
 tap 'homebrew/cask-fonts'
-tap 'dart-lang/dart'
 
 package 'ffmpeg'
 package 'gh'
@@ -40,7 +39,6 @@ package 'ghq'
 package 'hub'
 package 'tig'
 package 'ag'
-package 'dart'
 
 cask '1password'
 cask '1password-cli'
