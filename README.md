@@ -15,7 +15,7 @@ $ git clone https://github.com/yagi2/dotfiles.git ~/repos/github.com/yagi2/dotfi
 $ ssh-keygen -t ed25519 -C "yagi2.dev" # and save file path to ~/.ssh/id_ed25519_github
 $ pbcopy < ~/.ssh/id_ed25519_github.pub # and add new SSH key in GitHub
 $ ln -nfs ~/repos/github.com/yagi2/dotfiles/config/.ssh/config ~/.ssh/config
-$ ssh -T git@github.com # test SSH connection
+$ ssh -T git@github.com
 ```
 
 ### Setup
