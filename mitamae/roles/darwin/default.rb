@@ -19,6 +19,8 @@ include_cookbook 'ruby'
 include_cookbook 'java'
 include_cookbook 'xcode'
 
+tap 'homebrew/cask-fonts'
+
 package 'ffmpeg'
 package 'gh'
 package 'ki'
