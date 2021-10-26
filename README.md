@@ -4,7 +4,7 @@
 *note*  
 You have to login to AppStore before run this script. (for install apps from AppStore in this script.)  
 ```shell
-$ git clone https://github.com/lime1024/dotfiles.git
+$ git clone https://github.com/yagi2/dotfiles.git
 $ dotfiles/setup.sh
 $ /usr/local/bin/mitamae local dotfiles/mitamae/roles/darwin/default.rb
 ```
