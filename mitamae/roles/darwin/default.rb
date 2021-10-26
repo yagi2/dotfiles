@@ -60,7 +60,6 @@ cask 'tweeten'
 cask 'flutter'
 cask 'insomnia'
 
-mas '497799835' # Xcode use mas to initial install Xcode 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
 mas '405399194' # Kindle

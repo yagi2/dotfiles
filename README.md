@@ -9,6 +9,7 @@ You have to login to AppStore before run this script. (for install apps from App
 $ mkdir -p ~/repos/github.com/yagi2/dotfiles
 $ git clone https://github.com/yagi2/dotfiles.git ~/repos/github.com/yagi2/dotfiles
 ```
+
 ### Setting SSH for GitHub
 ```shell
 $ ssh-keygen -t ed25519 -C "yagi2.dev" # and save file path to ~/.ssh/id_ed25519_github
@@ -27,4 +28,10 @@ If you want to use a different user name
 ```shell
 $ echo "{\"home\": \"/Users/${user_name}\"}" >/tmp/node.json
 $ /usr/local/bin/mitamae local --node-json /tmp/node.json dotfiles/mitamae/roles/darwin/default.rb
+```
+
+### Install Xcode with xcodes after setup script
+```shell
+$ xcodes list # for login to Apple Developers
+$ xcodes install --latest
 ```
