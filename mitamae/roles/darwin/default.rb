@@ -55,6 +55,7 @@ cask 'inkdrop'
 cask 'figma'
 cask 'zoom'
 cask 'tweeten'
+cask 'flutter'
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
