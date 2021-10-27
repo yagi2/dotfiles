@@ -20,6 +20,7 @@ alias ps='procs'
 alias cat='bat'
 alias ls='exa --icons'
 alias g='git'
+alias flt='flutter'
 
 function hs
   if test (count $argv) = 0
