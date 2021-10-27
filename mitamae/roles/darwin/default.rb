@@ -39,6 +39,7 @@ package 'ghq'
 package 'hub'
 package 'tig'
 package 'ag'
+package 'docker'
 
 cask '1password'
 cask '1password-cli'
