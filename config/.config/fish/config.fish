@@ -68,6 +68,16 @@ function screenshot
   adb -s $DEVICE_ID shell rm /sdcard/$FILE_NAME
 end
 
+function screenShotiOS
+  set FILE_NAME (date "+Screenshot_%Y-%m-%d-%H-%M-%S_iOS").png
+  xcrun simctl io booted screenshot $FILE_NAME
+end
+
+function recordScreeniOS
+  set FILE_NAME (date "+Screenshot_%Y-%m-%d-%H-%M-%S_iOS").mp4
+  xcrun simctl io booted recordVideo $FILE_NAME
+end
+
 function uninstallApp
   set DEVICE_ID (select-adb)
   adb -s $DEVICE_ID shell pm list package | sed -e 's/^package://g' | peco | xargs adb -s $DEVICE_ID uninstall
@@ -96,6 +106,10 @@ end
 function inputText
   set DEVICE_ID (select-adb)
   adb -s $DEVICE_ID shell input text "$argv"
+end
+
+function inputTextiOS
+  echo $argv | xcrun simctl pbcopy booted
 end
 
 function adb-shell
@@ -162,6 +176,14 @@ end
 
 function openUrl
   adb-shell am start -a android.intent.action.VIEW -d $argv
+end
+
+function openUrliOS
+  xcrun simctl openurl booted $argv
+end
+
+function addMedia
+  xcrun simctl addmedia booted $argv
 end
 
 function currentActivity
