@@ -1,0 +1,25 @@
+# Android Studio Plugin List
+## Last Update: 2021/11/01
+- .ignore
+- ADB Idea
+- BashSupport
+- BrowseWordAtCaret
+- Catdea
+- Dagger
+- Dart
+- Flutter
+- Genymotion
+- GitToolBox
+- Indent Rainbow
+- JSON to Kotlin Class (JsonToKotlinClass)
+- Kotlin Multiplatform Mobile
+- Markdown
+- Material Theme UI
+- Nyan Progress Bar
+- OpenAPI (Swagger) Editor
+- Rainbow Brackets
+- Save Actions
+- Scabbard - Dagger 2 Visualizer
+- Sticky Selection
+- Swagger
+- Flutter Enhancement Suite
