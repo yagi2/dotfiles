@@ -24,3 +24,4 @@
     br = "!$SHELL -c 'ghq list | peco --prompt \"Git Repository>\" | xargs hub browse' __dummy__"
 [init]
 	templatedir = ~/.git_template/
+	defaultBranch = main
