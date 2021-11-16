@@ -40,6 +40,7 @@ package 'ghq'
 package 'hub'
 package 'tig'
 package 'ag'
+package 'wget'
 
 cask '1password'
 cask '1password-cli'
