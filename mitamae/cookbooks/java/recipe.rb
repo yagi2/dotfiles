@@ -1,4 +1,4 @@
-# package 'openjdk@11'
+package 'openjdk@11'
 
 if node[:arch] == "arm64"
     execute 'create symbolic-link' do
