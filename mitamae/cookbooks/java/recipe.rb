@@ -1,6 +1,6 @@
 # package 'openjdk@11'
 
-puts node[:arch]
+puts node[:arch].class
 puts node[:arch] == "arm64"
 
 if node[:arch] == "arm64"
