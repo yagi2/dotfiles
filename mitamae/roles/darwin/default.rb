@@ -64,6 +64,7 @@ cask 'zoom'
 cask 'tweeten'
 cask 'flutter'
 cask 'insomnia'
+cask 'google-chrome'
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
