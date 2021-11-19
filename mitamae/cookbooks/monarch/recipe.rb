@@ -1,3 +1,8 @@
+# remove already monarch binary
+execute "rm #{node[:home]}/bin/monarch" do
+    only_if "test -e #{node[:home]}/bin/monarch"
+end
+
 execute "donwload monarch" do
     command "curl -o #{node[:home]}/bin/monarch_macos.zip --create-dirs https://d2dpq905ksf9xw.cloudfront.net/macos/monarch_macos_1.6.0.zip"
 end
