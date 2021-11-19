@@ -31,6 +31,8 @@ $ /usr/local/bin/mitamae local --node-json /tmp/node.json dotfiles/mitamae/roles
 ```
 
 ### Install Xcode with xcodes after setup script
+*note*  
+Please install Xcode using the GUI version of xcodes while Apple Silicon's temporary support is in place.  
 ```shell
 $ xcodes list # for login to Apple Developers
 $ xcodes install --latest
