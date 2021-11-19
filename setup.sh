@@ -15,3 +15,8 @@ else
 fi
 
 sudo chmod +x /usr/local/bin/mitamae
+
+# install Rosetta2 when Apple Silicon Mac machine
+if [ $arch = "arm64" ] ; then
+    /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+fi
