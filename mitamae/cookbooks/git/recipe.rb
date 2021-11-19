@@ -1,6 +1,6 @@
 package 'git'
 
-directory "#{node[:home]}/github.com/"
+directory "#{node[:home]}/repos/github.com/"
 
 dotfile '.gitconfig'
 dotfile '.gitignore'
