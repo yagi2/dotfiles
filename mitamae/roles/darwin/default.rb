@@ -3,7 +3,7 @@ include_recipe File.expand_path('../../../helper.rb', __FILE__)
 node.reverse_merge!(
   dotfiles: File.expand_path('../../../../config/', __FILE__),
   home: '/Users/yagi2',
-  arch: `uname -m`
+  arch: `uname -m`.chomp
 )
 
 puts node[:arch]
