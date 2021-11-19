@@ -6,8 +6,6 @@ node.reverse_merge!(
   arch: `uname -m`.chomp
 )
 
-puts node[:arch]
-
 # include_cookbook 'macos-system'
 
 # include_cookbook 'dotfile'

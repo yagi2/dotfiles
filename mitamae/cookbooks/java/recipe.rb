@@ -1,11 +1,6 @@
 # package 'openjdk@11'
 
-puts node[:arch].class
-puts "arm64".class
-puts node[:arch] == "arm64"
-puts `uname -m` == "arm64"
-
-if `uname -m` == "arm64"
+if node[:arch] == "arm64"
     # execute 'create symbolic-link' do
     #     command "ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk"
     #     user 'root'
