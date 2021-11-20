@@ -66,6 +66,7 @@ cask 'tweeten'
 cask 'flutter'
 cask 'insomnia'
 cask 'google-chrome'
+cask 'appcleaner'
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
