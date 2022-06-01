@@ -1,2 +1,39 @@
 # Inserts a blank line between shell prompts
 add_newline = true
+format = "$all$directory$character"
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[[battery.display]]
+threshold = 100
+
+[dart]
+format = "via [🔰 $version](bold red) "
+
+[git_branch]
+symbol = "🌱 "
+ignore_branches = ["master", "main"]
+
+[git_commit]
+commit_hash_length = 8
+only_detached = false
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = " "
+format = "RAM: $ram_pct SWAP: $swap_pct "
+style = "bold dimmed green"
+
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
+utc_time_offset = "+9"
