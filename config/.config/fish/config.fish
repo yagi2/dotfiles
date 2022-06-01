@@ -229,3 +229,6 @@ function webm_to_mp4
   set OUTPUT_FILE_NAME (basename $INPUT_FILE_NAME .webm)
   ffmpeg -fflags +genpts -i $INPUT_FILE_NAME -r 24 $OUTPUT_FILE_NAME.mp4
 end
+
+# for starship
+starship init fish | source
