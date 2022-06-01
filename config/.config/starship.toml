@@ -4,7 +4,6 @@ format = "$all$directory$character"
 
 [directory]
 truncation_length = 0
-truncate_to_repo = false
 
 [[battery.display]]
 threshold = 100
