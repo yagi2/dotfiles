@@ -13,7 +13,6 @@ format = "via [🔰 $version](bold red) "
 
 [git_branch]
 symbol = "🌱 "
-ignore_branches = ["master", "main"]
 
 [git_commit]
 commit_hash_length = 8
