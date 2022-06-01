@@ -2,7 +2,7 @@ set ANDROID_SDK $HOME/Library/Android/sdk
 set ANDROID_HOME $HOME/Library/Android/sdk
 set GOPATH $HOME
 set JAVA_HOME (/usr/libexec/java_home -v "11")
-set PATH $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $GOPATH/bin /usr/local/opt/openjdk@11/bin $HOME/.pub-cache/bin $PATH
+set PATH $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $GOPATH/bin /usr/local/opt/openjdk@11/bin $HOME/fvm/default/bin $HOME/.pub-cache/bin $HOME/nodenv/bin $PATH
 set EDITOR /usr/local/bin/micro
 set LESSOPEN '| /usr/local/bin/src-hilite-lesspipe.sh %s'
 set LESS '-R'
@@ -15,6 +15,10 @@ fish_add_path /usr/local/opt/openjdk@8/bin
 status --is-interactive; and source (rbenv init -|psub)
 
 eval (gh completion -s fish | source)
+
+# for nodenv
+eval (nodenv init - | source)
+
 
 alias ps='procs'
 alias cat='bat'

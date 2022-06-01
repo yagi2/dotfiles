@@ -44,6 +44,7 @@ package 'hub'
 package 'tig'
 package 'ag'
 package 'wget'
+package 'nodenv'
 
 cask '1password'
 cask '1password-cli'
