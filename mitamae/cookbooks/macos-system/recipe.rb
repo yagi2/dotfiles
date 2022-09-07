@@ -65,8 +65,6 @@ execute 'set first day of week to monday' do
     command 'defaults write .GlobalPreferences AppleFirstWeekday -dict gregorian 2'
 end
 
-end
-
 execute 'set temperature unit to celsius' do
     command 'defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"'
 end
