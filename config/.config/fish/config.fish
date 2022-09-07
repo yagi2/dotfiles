@@ -27,6 +27,9 @@ eval (gh completion -s fish | source)
 # for nodenv
 eval (nodenv init - | source)
 
+# for pyenv
+eval (pyenv init --path)
+eval (pyenv init -)
 
 alias ps='procs'
 alias cat='bat'
