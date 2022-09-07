@@ -65,11 +65,6 @@ execute 'set first day of week to monday' do
     command 'defaults write .GlobalPreferences AppleFirstWeekday -dict gregorian 2'
 end
 
-execute 'set calendar to japanese' do
-    command <<~SCRIPT
-    ALOCAL=$(defaults read .GlobalPreferences AppleLocale | awk -F '@' '{print $1}')
-    defaults write .GlobalPreferences AppleLocale -string "${ALOCAL}@calendar=japanese"
-    SCRIPT
 end
 
 execute 'set temperature unit to celsius' do
