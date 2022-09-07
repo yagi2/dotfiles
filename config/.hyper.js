@@ -13,7 +13,7 @@ module.exports = {
         },
 
         // login shell
-        shell: '/usr/local/bin/fish',
+        shell: '/opt/homebrew/bin/fish',
 
         updateChannel: 'stable',
 
