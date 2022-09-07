@@ -75,6 +75,7 @@ cask 'appcleaner'
 cask 'mountain-duck'
 cask 'expressvpn'
 cask 'adobe-creative-cloud'
+cask 'jetbrains-toolbox '
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
