@@ -26,6 +26,7 @@ include_cookbook 'starship'
 cask 'xcodes' # 上記の対応が終わったら戻す
 
 tap 'homebrew/cask-fonts'
+tap 'leoafarias/fvm'
 
 package 'ffmpeg'
 package 'gh'
@@ -46,6 +47,7 @@ package 'tig'
 package 'ag'
 package 'wget'
 package 'nodenv'
+package 'fvm'
 
 cask '1password'
 cask '1password-cli'
