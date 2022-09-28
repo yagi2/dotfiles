@@ -49,6 +49,8 @@ package 'ag'
 package 'wget'
 package 'nodenv'
 package 'fvm'
+package 'gnupg'
+package 'pinentry-mac'
 
 cask '1password' 
 cask '1password-cli'
