@@ -1,6 +1,7 @@
 [user]
   name = Itsuki Aoyagi
   email = mail@yagi2.dev
+  signingkey = 15F00AE0C3699754
 [alias]
   force-push = push --force-with-lease
 [core]
@@ -25,3 +26,5 @@
 [init]
 	templatedir = ~/.git_template/
 	defaultBranch = main
+[commit]
+	gpgsign = true
