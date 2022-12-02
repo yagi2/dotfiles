@@ -75,7 +75,7 @@ cask 'appcleaner'
 cask 'mountain-duck'
 cask 'adobe-creative-cloud'
 cask 'jetbrains-toolbox'
-cask 'docker'
+cask 'rancher'
 cask 'skitch'
 
 mas '539883307' # LINE
