@@ -2,7 +2,8 @@ set -gx HOMEBREW_PREFIX "/opt/homebrew";
 set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
 set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
 set -gx HOMEBREW_SHELLENV_PREFIX "/opt/homebrew";
-set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" "$HOME/.rd/bin" $PATH;
+set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
+set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" "$HOME/.rd/bin" $HOME/.krew/bin $PATH;
 set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/opt/homebrew/share/man" $MANPATH;
 set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
 
@@ -24,6 +25,9 @@ fish_add_path /usr/local/opt/openjdk@8/bin
 # for rbenv
 eval (rbenv init - | source)
 
+# for kubectl completion
+eval (kubectl completion fish | source)
+
 eval (gh completion -s fish | source)
 
 # for nodenv
@@ -38,6 +42,7 @@ alias cat='bat'
 alias ls='exa --icons'
 alias g='git'
 alias flt='flutter'
+alias k='kubectl'
 
 function hs
   if test (count $argv) = 0
