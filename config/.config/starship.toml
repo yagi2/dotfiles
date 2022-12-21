@@ -9,10 +9,7 @@ truncation_length = 0
 threshold = 100
 
 [dart]
-format = "via [🔰 $version](bold red) "
-
-[git_branch]
-symbol = "🌱 "
+format = "via [$symbol$version](bold red) "
 
 [git_commit]
 commit_hash_length = 8
@@ -31,16 +28,9 @@ staged = '[++\($count\)](green)'
 renamed = "👅"
 deleted = "🗑"
 
-[memory_usage]
-disabled = false
-threshold = -1
-symbol = " "
-format = "RAM: $ram_pct SWAP: $swap_pct "
-style = "bold dimmed green"
-
 [time]
 disabled = false
-format = '🕙[\[ $time \]]($style) '
+format = '🕙[\[$time\]]($style) '
 time_format = "%T"
 utc_time_offset = "+9"
 
@@ -48,4 +38,22 @@ utc_time_offset = "+9"
 format = "[$symbol$context:$namespace]($style) "
 symbol = "🅚 "
 style = "fg:0"
+disabled = false
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[cmd_duration]
+min_time = 100
+format = 'took [$duration](bold yellow)'
+
+[docker_context]
+format = 'via [🐋 $context](blue bold)'
+
+[gcloud]
+format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold red) '
 disabled = false
