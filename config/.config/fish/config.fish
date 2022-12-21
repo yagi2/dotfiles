@@ -2,8 +2,9 @@ set -gx HOMEBREW_PREFIX "/opt/homebrew";
 set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
 set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
 set -gx HOMEBREW_SHELLENV_PREFIX "/opt/homebrew";
+set -x PYENV_ROOT $HOME/.pyenv
 set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
-set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" "$HOME/.rd/bin" $HOME/.krew/bin $PATH;
+set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" "$HOME/.rd/bin" $HOME/.krew/bin $PYENV_ROOT/bin $PATH;
 set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/opt/homebrew/share/man" $MANPATH;
 set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
 
@@ -23,19 +24,21 @@ set -gx theme_nerd_fonts yes
 fish_add_path /usr/local/opt/openjdk@8/bin
 
 # for rbenv
-eval (rbenv init - | source)
+rbenv init - | source
 
 # for kubectl completion
-eval (kubectl completion fish | source)
+kubectl completion fish | source
 
-eval (gh completion -s fish | source)
+gh completion -s fish | source
 
 # for nodenv
-eval (nodenv init - | source)
+nodenv init - | source
 
 # for pyenv
-eval (pyenv init --path)
-eval (pyenv init -)
+pyenv init - | source
+
+# for starship
+starship init fish | source
 
 alias ps='procs'
 alias cat='bat'
@@ -247,6 +250,3 @@ function webm_to_mp4
   set OUTPUT_FILE_NAME (basename $INPUT_FILE_NAME .webm)
   ffmpeg -fflags +genpts -i $INPUT_FILE_NAME -r 24 $OUTPUT_FILE_NAME.mp4
 end
-
-# for starship
-starship init fish | source
