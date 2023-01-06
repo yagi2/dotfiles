@@ -16,7 +16,8 @@ include_cookbook 'tap'
 
 include_cookbook 'git'
 include_cookbook 'fish-shell'
-include_cookbook 'hyper'
+include_cookbook 'alacritty'
+include_cookbook 'tmux'
 include_cookbook 'monarch'
 include_cookbook 'ruby'
 include_cookbook 'cocoapods'
@@ -94,3 +95,4 @@ mas '640199958' # Apple Developer
 mas '405399194' # Kindle
 mas '585829637' # Todoist
 mas '1429033973' # RunCat
+mas '975890633' # HotKey App
