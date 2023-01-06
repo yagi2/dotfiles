@@ -7,12 +7,12 @@ set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
 set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" "$HOME/.rd/bin" $HOME/.krew/bin $PYENV_ROOT/bin $PATH;
 set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/opt/homebrew/share/man" $MANPATH;
 set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
+set -gx GOPATH $HOME/go
 
 set -gx GPG_TTY (tty)
 
 set ANDROID_SDK $HOME/Library/Android/sdk
 set ANDROID_HOME $HOME/Library/Android/sdk
-set GOPATH $HOME
 set JAVA_HOME (/usr/libexec/java_home -v "11")
 set PATH $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $GOPATH/bin /usr/local/opt/openjdk@11/bin $HOME/fvm/default/bin $HOME/.pub-cache/bin $HOME/nodenv/bin $HOME/.rbenv/bin $PATH
 set EDITOR /usr/local/bin/micro
@@ -61,6 +61,14 @@ function hs
   end
 end
 bind \cr hs
+
+function github_open
+    git config --list | grep "remote.origin.url" | awk -F '=' '{print $2}' | xargs open
+end
+
+function dsh
+    docker exec -it (docker ps | peco | cut -d " " -f 1) /bin/bash
+end
 
 function gcd
     ghq list --full-path | peco --prompt "Git Repository>" | read recent
