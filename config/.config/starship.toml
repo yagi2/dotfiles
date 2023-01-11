@@ -37,7 +37,7 @@ utc_time_offset = "+9"
 [kubernetes]
 format = "[$symbol$context:$namespace]($style) "
 symbol = "🅚 "
-style = "fg:0"
+style = "fg:bright-green	"
 disabled = false
 
 [container]
