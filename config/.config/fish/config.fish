@@ -14,7 +14,7 @@ set -gx GPG_TTY (tty)
 set ANDROID_SDK $HOME/Library/Android/sdk
 set ANDROID_HOME $HOME/Library/Android/sdk
 set JAVA_HOME (/usr/libexec/java_home -v "11")
-set PATH $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $GOPATH/bin /usr/local/opt/openjdk@11/bin $HOME/fvm/default/bin $HOME/.pub-cache/bin $HOME/nodenv/bin $HOME/.rbenv/bin $PATH
+set PATH $HOME/Library/Android/sdk/platform-tools $HOME/Library/Android/sdk/tools $HOME/bin $GOPATH/bin /usr/local/opt/openjdk@11/bin $HOME/fvm/default/bin $HOME/.pub-cache/bin $HOME/.rbenv/bin $PATH
 set EDITOR /usr/local/bin/micro
 set LESSOPEN '| /usr/local/bin/src-hilite-lesspipe.sh %s'
 set LESS '-R'
@@ -30,9 +30,6 @@ rbenv init - | source
 kubectl completion fish | source
 
 gh completion -s fish | source
-
-# for nodenv
-nodenv init - | source
 
 # for pyenv
 pyenv init - | source
@@ -61,6 +58,10 @@ function hs
   end
 end
 bind \cr hs
+
+function nvm
+    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
 
 function github_open
     git config --list | grep "remote.origin.url" | awk -F '=' '{print $2}' | xargs open

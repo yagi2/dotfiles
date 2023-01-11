@@ -9,3 +9,7 @@ end
 execute "install and apply bobthefish theme" do
     command "echo \"fisher install oh-my-fish/theme-bobthefish\" | fish"
 end
+
+execute "install and apply bass" do
+    command "echo \"fisher install edc/bass\" | fish"
+end
