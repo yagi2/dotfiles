@@ -24,6 +24,8 @@ include_cookbook 'cocoapods'
 include_cookbook 'java'
 include_cookbook 'starship'
 include_cookbook 'python'
+include_cookbook 'gcloud'
+include_cookbook 'kubectl'
 # include_cookbook 'xcode' // https://github.com/RobotsAndPencils/xcodes/issues/148 の問題で一旦GUI版をCaskで入れる入れる 対応されたら戻す
 cask 'xcodes' # 上記の対応が終わったら戻す
 
@@ -96,7 +98,6 @@ cask 'postman'
 cask 'obs'
 cask 'krisp'
 cask 'jasper'
-cask 'google-cloud-sdk'
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
