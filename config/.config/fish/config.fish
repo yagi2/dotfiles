@@ -40,6 +40,8 @@ starship init fish | source
 alias ps='procs'
 alias cat='bat'
 alias ls='exa --icons'
+alias ll='ls -l'
+alias la='ls -la'
 alias g='git'
 alias flt='flutter'
 alias k='kubectl'
