@@ -46,6 +46,7 @@ package 'awscli'
 package 'mas'
 package 'pidcat'
 package 'go'
+package 'go-task'
 package 'ghq'
 package 'hub'
 package 'tig'
@@ -55,7 +56,6 @@ package 'nodenv'
 package 'fvm'
 package 'gnupg'
 package 'pinentry-mac'
-package 'google-cloud-sdk'
 package 'tfenv'
 package 'docker-compose'
 package 'kubectx'
@@ -63,6 +63,7 @@ package 'kustomize'
 package 'skaffold'
 package 'kubeseal'
 package 'kubetail'
+package 'buf'
 
 cask '1password' 
 cask '1password-cli'
@@ -89,10 +90,16 @@ cask 'adobe-creative-cloud'
 cask 'jetbrains-toolbox'
 cask 'rancher'
 cask 'skitch'
+cask 'todoist'
+cask 'qmk-toolbox'
+cask 'postman'
+cask 'obs'
+cask 'krisp'
+cask 'jasper'
+cask 'google-cloud-sdk'
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
 mas '405399194' # Kindle
-mas '585829637' # Todoist
 mas '1429033973' # RunCat
 mas '975890633' # HotKey App
