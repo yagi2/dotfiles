@@ -97,6 +97,7 @@ cask 'postman'
 cask 'obs'
 cask 'krisp'
 cask 'jasper'
+cask 'betterdisplay'
 
 mas '539883307' # LINE
 mas '640199958' # Apple Developer
