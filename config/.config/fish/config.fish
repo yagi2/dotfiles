@@ -20,6 +20,10 @@ set LESSOPEN '| /usr/local/bin/src-hilite-lesspipe.sh %s'
 set LESS '-R'
 set -gx theme_nerd_fonts yes
 
+# for pnpm
+set -gx PNPM_HOME "/Users/aoyagi/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+
 # for java
 fish_add_path /usr/local/opt/openjdk@8/bin
 
